@@ -385,7 +385,7 @@ logMessageData.leftParticipantFbId,
      let find_thuebot = thuebot.find($ => $.t_id == event.threadID);
      if (((global.data.threadData.get(event.threadID)?.PREFIX || global.config.PREFIX) + 'callad') != event.args[0]) {
         if (!find_thuebot) return api.shareContact(`\n❎ ${name} Nhóm đã thuê bot đéo đâu`, global.config.NDH[0], event.threadID);
-        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now()) return api.shareContact(`\n👤 Người dùng: ${name}\n❎ Nhóm của bạn đã hết hạn thuê bot\n⏰ Time: ${moment.tz("Asia/Ho_Chi_Minh").format("DD/MM/YYYY || HH:mm:ss")}`, global.config.NDH[0], event.threadID);
+        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now()) return api.shareContact(`\n❌: ${name}\nGroup was not approved. Contact bot admin for approval\n⏰ Time: ${moment.tz("Asia/Ho_Chi_Minh").format("DD/MM/YYYY || HH:mm:ss")}`, global.config.NDH[0], event.threadID);
      };
   };
   var gio = moment.tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY || HH:mm:ss');
