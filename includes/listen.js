@@ -266,7 +266,25 @@ logger.loader(`Ping load source code: ${Date.now() - global.client.timeStart}ms`
   //////////////////////////////////////////////////
   //========= Send event to handle need =========//
 ////////////////////////////////////////////////
+// ===== CUSTOM IMAGE LOCK (TID + LINK) =====
+const fs = require("fs");
+const axios = require("axios");
+const lockPath = __dirname + "/../modules/commands/data/customGroupLock.json";
 
+if (fs.existsSync(lockPath)) {
+  const lockData = JSON.parse(fs.readFileSync(lockPath));
+  const imgLink = lockData[event.threadID];
+
+  if (imgLink) {
+    const botID = api.getCurrentUserID();
+
+    if (event.type === "change_thread_image" && event.author !== botID) {
+      const res = await axios.get(imgLink, { responseType: "stream" });
+      await api.changeGroupImage(res.data, event.threadID);
+    }
+  }
+}
+// ===== END IMAGE LOCK =====
 return async (event) => {
  const { threadID, author, image,type,logMessageType, logMessageBody,logMessageData } = event;
   const tm = process.uptime(),Tm=(require('moment-timezone')).tz('Asia/Ho_Chi_Minh').format('HH:mm:ss || DD/MM/YYYY')
