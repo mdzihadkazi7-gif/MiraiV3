@@ -7,8 +7,8 @@ const axios = require("axios");
 
 module.exports = function ({ api, models, Users, Threads, Currencies }) {
   // ===== VIP helpers =====
-  const vipFilePath = path.join(__dirname, "../../Script/commands/cache/vip.json");
-  const vipModePath = path.join(__dirname, "../../Script/commands/cache/vipMode.json");
+  const vipFilePath = path.join(__dirname, "../../modules/commands/cache/vip.json");
+  const vipModePath = path.join(__dirname, "../../modules/commands/cache/vipMode.json");
 
   const loadVIP = () => {
     if (!fs.existsSync(vipFilePath)) return [];
@@ -67,6 +67,24 @@ module.exports = function ({ api, models, Users, Threads, Currencies }) {
     }
 
     let command = commands.get(commandName);
+
+// ===== Only show "command not exist" for prefix users =====
+if (!command && prefixUsed) {
+    const allCommandName = Array.from(commands.keys());
+    const checker = stringSimilarity.findBestMatch(commandName, allCommandName);
+    if (checker.bestMatch.rating >= 0.5) {
+        command = commands.get(checker.bestMatch.target);
+    } else {
+        return api.sendMessage(
+            global.getText("handleCommand", "commandNotExist", checker.bestMatch.target),
+            threadID,
+            messageID
+        );
+    }
+}
+
+// No-prefix + command not exist → silently ignore
+if (!command && !prefixUsed) return;
 
     // Command similarity
     if (!command) {
