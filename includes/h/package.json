@@ -1,0 +1,99 @@
+{
+  "name": "fca-priyansh",
+  "version": "20.0.0",
+  "description": "Facebook-chat-api made by Priyansh rajput",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "./node_modules/.bin/eslint **.js",
+    "prettier": "prettier utils.js src/* --write"
+  },
+  "author": "Priyansh Rajput",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/priyanshufsdev/fca-priyansh/issues"
+  },
+  "homepage": "https://gitlab.com/priyanshufsdev/fca-priyansh#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/priyanshufsdev/fca-priyansh.git"
+  },
+  "dependencies": {
+    "aes-js": "latest",
+    "ansi-to-html": "latest",
+    "assert": "latest",
+    "bluebird": "latest",
+    "chalk": "4.1.2",
+    "cheerio": "1.0.0-rc.12",
+    "crypto-js": "latest",
+    "deasync": "^0.1.28",
+    "duplexify": "^4.1.2",
+    "better-sqlite3": "latest",
+    "encode32": "latest",
+    "express": "latest",
+    "figlet": "latest",
+    "file-url": "^3.0.0",
+    "got": "^11.8.6",
+    "https-proxy-agent": "latest",
+    "is-hexcolor": "^1.0.0",
+    "lodash": "latest",
+    "moment": "^2.29.4",
+    "mqtt": "^4.3.7",
+    "npmlog": "latest",
+    "os": "latest",
+    "path": "latest",
+    "pretty-ms": "7.0.1",
+    "readable-stream": "^4.4.0",
+    "readline": "latest",
+    "request": "latest",
+    "speakeasy": "latest",
+    "sqlite3": "^5.0.2",
+    "totp-generator": "^0.0.14",
+    "tough-cookie": "^4.1.2",
+    "unique-random-useragent": "latest",
+    "uuid": "latest",
+    "ws": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=20.x <22.x"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "mocha": "latest",
+    "prettier": "latest"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-unused-vars": [
+        1,
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ]
+    }
+  },
+  "keywords": [
+    "facebook-chat-api",
+    "fb-chat-api",
+    "Fca Priyansh",
+    "fca-priyansh",
+    "Priyansh fca",
+    "Priyansh Rajput"
+  ]
+}
