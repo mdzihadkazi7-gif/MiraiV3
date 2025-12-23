@@ -123,7 +123,7 @@
       "youtubei.js": "^1.4.5",
       "yt-search": "^2.10.4",
       "ytdl-core": "^4.11.2",
-      "pri-fca": "^13.0.0",
+      "fca-maria": "^16.0.7",
       "zalgo": "0.0.1"
   }
   }
