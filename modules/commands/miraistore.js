@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const API_BASE = "https://mirai-store.onrender.com/";
+const API_BASE = "https://mirai-store.onrender.com";
 const ADMINS = [
   "100068565380737"
 ];
