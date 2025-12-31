@@ -2,16 +2,16 @@ const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
 
-const API_BASE = "https://mirai-store.onrender.com";
+const API_BASE = "https://mirai-store.vercel.app";
 const ADMINS = ["100068565380737"];
 
 module.exports.config = {
  name: "miraistore",
  version: "2.0.0",
  hasPermission: 2,
- credits: "rX",
+ credits: "Rx",
  description: "Mirai Command Store (Search, Like, Upload, Delete, Trending)",
- commandCategory: "store",
+ commandCategory: "system",
  usages:
  "!miraistore <id | name | category>\n" +
  "!miraistore like <id>\n" +
