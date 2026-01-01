@@ -51,7 +51,7 @@ module.exports.handleEvent = async function({ api, event, Users }) {
 
     const firstMessage =
 `╭──────•◈•──────╮
-  ʜᴇʏ xᴀɴ ɪᴀᴍ ᴍᴀʀɪᴀ ʙᴀʙᴢ 
+  ʜᴇʏ xᴀɴ ɪᴀᴍ 𝐈𝐭𝐚𝐜𝐡𝐢 𝐁𝐨𝐭
 
  ✰ Hi ${name}, 
  💌 ${rand}
